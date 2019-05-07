@@ -152,4 +152,17 @@ class AlbmsDataController: NSObject {
             })
         }
     }
+    
+    func clearStorage() {
+        let contextToUse = self.mainObjectContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            let _ = try contextToUse.execute(batchDeleteRequest)
+        } catch {
+            // Create a new one
+            print("Could not delete entities")
+        }
+    }
 }

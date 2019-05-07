@@ -17,6 +17,10 @@
 		965A9A8F2281569100E2151A /* ALBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A8E2281569100E2151A /* ALBUtilities.swift */; };
 		965A9A922281574600E2151A /* UIColor+Albms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A912281574600E2151A /* UIColor+Albms.swift */; };
 		965A9A96228158F100E2151A /* AlbmsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A95228158F100E2151A /* AlbmsDataController.swift */; };
+		965A9A9822815CEF00E2151A /* UIImageView+Albms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9722815CEF00E2151A /* UIImageView+Albms.swift */; };
+		965A9A9A22815F3600E2151A /* ALBImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9922815F3600E2151A /* ALBImageCache.swift */; };
+		965A9A9C228161E400E2151A /* AlbmsNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9B228161E400E2151A /* AlbmsNetworkController.swift */; };
+		965A9A9F2281652200E2151A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9E2281652200E2151A /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		965A9A8E2281569100E2151A /* ALBUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBUtilities.swift; sourceTree = "<group>"; };
 		965A9A912281574600E2151A /* UIColor+Albms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Albms.swift"; sourceTree = "<group>"; };
 		965A9A95228158F100E2151A /* AlbmsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbmsDataController.swift; sourceTree = "<group>"; };
+		965A9A9722815CEF00E2151A /* UIImageView+Albms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Albms.swift"; sourceTree = "<group>"; };
+		965A9A9922815F3600E2151A /* ALBImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBImageCache.swift; sourceTree = "<group>"; };
+		965A9A9B228161E400E2151A /* AlbmsNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbmsNetworkController.swift; sourceTree = "<group>"; };
+		965A9A9E2281652200E2151A /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 				965A9A6A2281559900E2151A /* AppDelegate.swift */,
 				965A9A94228157CC00E2151A /* Controllers */,
 				965A9A792281559B00E2151A /* Info.plist */,
+				965A9A9D228164FC00E2151A /* Models */,
 				965A9A932281579500E2151A /* Resources */,
 				965A9A8D228155F300E2151A /* Utilities */,
 			);
@@ -108,6 +117,7 @@
 			children = (
 				965A9A902281573100E2151A /* Extensions */,
 				965A9A8E2281569100E2151A /* ALBUtilities.swift */,
+				965A9A9922815F3600E2151A /* ALBImageCache.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -116,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				965A9A912281574600E2151A /* UIColor+Albms.swift */,
+				965A9A9722815CEF00E2151A /* UIImageView+Albms.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,8 +147,17 @@
 			children = (
 				965A9A6C2281559900E2151A /* MainViewController.swift */,
 				965A9A95228158F100E2151A /* AlbmsDataController.swift */,
+				965A9A9B228161E400E2151A /* AlbmsNetworkController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		965A9A9D228164FC00E2151A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				965A9A9E2281652200E2151A /* Album.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +265,12 @@
 				965A9A96228158F100E2151A /* AlbmsDataController.swift in Sources */,
 				965A9A922281574600E2151A /* UIColor+Albms.swift in Sources */,
 				965A9A6D2281559900E2151A /* MainViewController.swift in Sources */,
+				965A9A9A22815F3600E2151A /* ALBImageCache.swift in Sources */,
+				965A9A9822815CEF00E2151A /* UIImageView+Albms.swift in Sources */,
 				965A9A6B2281559900E2151A /* AppDelegate.swift in Sources */,
 				965A9A732281559900E2151A /* Albms.xcdatamodeld in Sources */,
+				965A9A9C228161E400E2151A /* AlbmsNetworkController.swift in Sources */,
+				965A9A9F2281652200E2151A /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
