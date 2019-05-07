@@ -20,7 +20,7 @@ struct AlbmsNetworkController {
         }
     }
     
-    func fetchLatestAlbums() {
+    func fetchLatestAlbums(_ closure: @escaping (Bool) -> (Void)) {
         
         guard let url = URL(string: albumsURL) else { return }
         
@@ -39,13 +39,19 @@ struct AlbmsNetworkController {
             // Clear out the cache in core data so we don't duplicate results
             self.dataController?.clearStorage()
             
+            var success = false
             do {
                 let decoder = JSONDecoder()
                 decoder.userInfo[codingUserInfoKeyManagedObjectContext] = mainObjectContext
                 _ = try decoder.decode(Feed.self, from: jsonData)
                 try mainObjectContext.save()
+                success = true
             } catch {
                 print("Error fetching iTunes albums: \(error)")
+            }
+            
+            ALBUtility.executeOnMainQueue {
+                closure(success)
             }
         }.resume()
     }

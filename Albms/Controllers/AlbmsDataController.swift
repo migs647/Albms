@@ -153,6 +153,9 @@ class AlbmsDataController: NSObject {
         }
     }
     
+    
+    /// Reset the database to it's original glory so we don't keep appending
+    /// albums every time we go a new fetch.
     func clearStorage() {
         let contextToUse = self.mainObjectContext
         
@@ -164,5 +167,37 @@ class AlbmsDataController: NSObject {
             // Create a new one
             print("Could not delete entities")
         }
+    }
+    
+    
+    /// Looks up all albums. This grabs all albums that were last downloaded.
+    ///
+    /// - Parameters:
+    ///   - context: Background or main contexts.
+    /// - Returns: Returns the session that was found, otherwise nil.
+    func lookupAlbums(context: NSManagedObjectContext?) -> [Album]? {
+        // Check the context, if it is NULL lets use the default context
+        var contextToUse = self.mainObjectContext
+        if let tempContext = context {
+            contextToUse = tempContext
+        }
+        
+        // TODO: Develop a cleaner way to do this so we have type checking and less
+        // manual code. Perhaps cycle a bridge map.
+        var albums: [Album]?
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
+        request.returnsObjectsAsFaults = false
+        do {
+            let results = try contextToUse.fetch(request)
+            if let tempResult = results as? [Album] {
+                albums = tempResult
+            }
+        } catch {
+            // Create a new one
+            print("Could not find session")
+        }
+        
+        return albums
     }
 }
