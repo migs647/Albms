@@ -13,12 +13,14 @@ class MainViewController: AlbmsAbstractViewController {
     @IBOutlet var tableview: UITableView!
     private var albums: [Album]?
     private var dataController: AlbmsDataController?
+    private var selectedAlbum: Album?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Start an animation of the loading of the albums
         animateProcess(true)
+        tableview.separatorStyle = .none
         
         // Grab the data controller so we can use it to load all of the albums
         // from Core Data
@@ -35,22 +37,37 @@ class MainViewController: AlbmsAbstractViewController {
                 self?.albums = albums
                 ALBUtility.executeOnMainQueue {
                     self?.animateProcess(false)
+                    self?.tableview.separatorStyle = .singleLine
                     self?.tableview.reloadData()
                 }
             }
         }
         
         // Configure views
+        configureViews()
         
         // TODO: Grab the albums out of cache in case the network does not
         // return any results.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let nextViewController = segue.destination as? DetailsViewController,
+            let selectedAlbum = selectedAlbum {
+            nextViewController.albumDetails = selectedAlbum
+        }
+    }
+    
     private func configureViews() {
+        view.backgroundColor = UIColor.albDarkGray()
+        tableview.backgroundColor = UIColor.albDarkGray()
         tableview.separatorColor = UIColor.albMediumGray()
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// MARK: - MainViewController UITableViewDataSource Methods
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albums?.count ?? 0
@@ -86,8 +103,16 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// MARK: - MainViewController UITableViewDelegate Methods
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableview.deselectRow(at: indexPath, animated: true)
+        
+        if let albums = albums, albums.count > indexPath.row {
+            selectedAlbum = albums[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "DetailsID", sender: self)
     }
 }

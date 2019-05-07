@@ -23,6 +23,7 @@
 		965A9A9F2281652200E2151A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9E2281652200E2151A /* Album.swift */; };
 		965A9AA322817E6700E2151A /* AlbmsAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9AA222817E6700E2151A /* AlbmsAbstractViewController.swift */; };
 		965A9AA6228180CE00E2151A /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9AA5228180CE00E2151A /* AlbumTableViewCell.swift */; };
+		965A9AB3228228CC00E2151A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9AB2228228CC00E2151A /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		965A9A9E2281652200E2151A /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		965A9AA222817E6700E2151A /* AlbmsAbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbmsAbstractViewController.swift; sourceTree = "<group>"; };
 		965A9AA5228180CE00E2151A /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		965A9AB2228228CC00E2151A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				965A9A95228158F100E2151A /* AlbmsDataController.swift */,
 				965A9A9B228161E400E2151A /* AlbmsNetworkController.swift */,
 				965A9AA222817E6700E2151A /* AlbmsAbstractViewController.swift */,
+				965A9AB2228228CC00E2151A /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				965A9A732281559900E2151A /* Albms.xcdatamodeld in Sources */,
 				965A9A9C228161E400E2151A /* AlbmsNetworkController.swift in Sources */,
 				965A9A9F2281652200E2151A /* Album.swift in Sources */,
+				965A9AB3228228CC00E2151A /* DetailsViewController.swift in Sources */,
 				965A9AA6228180CE00E2151A /* AlbumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

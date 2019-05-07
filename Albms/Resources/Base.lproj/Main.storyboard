@@ -13,7 +13,7 @@
         <!--Albms-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Albms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Albms" storyboardIdentifier="Albms" id="BYZ-38-t0r" customClass="MainViewController" customModule="Albms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,6 +89,7 @@
                     <navigationItem key="navigationItem" title="Albms" id="0qi-VY-0dz"/>
                     <connections>
                         <outlet property="tableview" destination="erP-P3-GI3" id="3M2-yF-d3v"/>
+                        <segue destination="i8h-va-a2C" kind="show" identifier="DetailsID" id="gV1-eN-I3O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,6 +111,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BM6-QB-QwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-138" y="52"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="Ozl-v7-1Aa">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i8h-va-a2C" customClass="DetailsViewController" customModule="Albms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QR2-i6-7fC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-mK-RlN">
+                                <rect key="frame" x="20" y="108" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RQI-mK-RlN" secondAttribute="height" multiplier="1:1" id="82a-3M-azf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgZ-Ar-RbL">
+                                <rect key="frame" x="20" y="718" width="335" height="40"/>
+                                <color key="backgroundColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AaY-Qx-NqW"/>
+                                </constraints>
+                                <state key="normal" title="View in iTunes"/>
+                                <connections>
+                                    <action selector="loadItunes" destination="i8h-va-a2C" eventType="touchUpInside" id="b9S-Gn-MOQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JGL-kM-YyF" firstAttribute="trailing" secondItem="GgZ-Ar-RbL" secondAttribute="trailing" constant="20" id="2rY-TU-jZ2"/>
+                            <constraint firstItem="GgZ-Ar-RbL" firstAttribute="centerX" secondItem="JGL-kM-YyF" secondAttribute="centerX" id="3Xq-nH-UBa"/>
+                            <constraint firstItem="GgZ-Ar-RbL" firstAttribute="leading" secondItem="JGL-kM-YyF" secondAttribute="leading" constant="20" id="EOa-05-q7w"/>
+                            <constraint firstItem="RQI-mK-RlN" firstAttribute="centerX" secondItem="JGL-kM-YyF" secondAttribute="centerX" id="MLT-0T-5Fa"/>
+                            <constraint firstItem="GgZ-Ar-RbL" firstAttribute="bottom" secondItem="JGL-kM-YyF" secondAttribute="bottom" constant="-20" id="Oif-Nm-hIt"/>
+                            <constraint firstItem="GgZ-Ar-RbL" firstAttribute="width" secondItem="RQI-mK-RlN" secondAttribute="width" id="rNz-dg-kc9"/>
+                            <constraint firstItem="RQI-mK-RlN" firstAttribute="top" secondItem="JGL-kM-YyF" secondAttribute="top" constant="20" id="tEp-Hw-1gL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JGL-kM-YyF"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumImageView" destination="RQI-mK-RlN" id="N6Z-ez-jmr"/>
+                        <outlet property="viewIniTunesButton" destination="GgZ-Ar-RbL" id="LKx-oL-s43"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHo-hx-g7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1733.5999999999999" y="51.724137931034484"/>
         </scene>
     </scenes>
     <resources>

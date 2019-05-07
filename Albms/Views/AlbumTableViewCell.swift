@@ -29,10 +29,9 @@ class AlbumTableViewCell: UITableViewCell {
         configureViews()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        albumImageView.image = UIImage(named: "Albm Generic")
     }
     
     private func configureViews() {
