@@ -187,6 +187,7 @@ class AlbmsDataController: NSObject {
         var albums: [Album]?
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
+        request.sortDescriptors = [NSSortDescriptor(key: "sortNumber", ascending: true)]
         request.returnsObjectsAsFaults = false
         do {
             let results = try contextToUse.fetch(request)

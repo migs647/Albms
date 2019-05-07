@@ -43,7 +43,14 @@ struct AlbmsNetworkController {
             do {
                 let decoder = JSONDecoder()
                 decoder.userInfo[codingUserInfoKeyManagedObjectContext] = mainObjectContext
-                _ = try decoder.decode(Feed.self, from: jsonData)
+                let albumFeed = try decoder.decode(Feed.self, from: jsonData)
+                
+                // Update the index
+                for (index, album) in albumFeed.feed.results.enumerated() {
+                    album.sortNumber = Int16(index)
+                }
+                
+                
                 try mainObjectContext.save()
                 success = true
             } catch {

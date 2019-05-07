@@ -66,9 +66,23 @@ extension MainViewController: UITableViewDataSource {
             let album = albums[indexPath.row]
             returnCell.albumLabel.text = album.name
             returnCell.artistLabel.text = album.artistName
+            
+            if let albumThumbUrl = album.artistThumbUrl {
+                ALBImageCache.shared.cacheImage(urlString: albumThumbUrl, indexPath: indexPath) { [weak self] (returnedImaged, returnedIndexPath) in
+                    if let returnedIndexPath = returnedIndexPath {
+                        if let cellToUse = self?.tableview?.cellForRow(at: returnedIndexPath) as? AlbumTableViewCell {
+                            cellToUse.albumImageView.image = returnedImaged
+                        }
+                    }
+                }
+            }
         }
         
         return returnCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 }
 

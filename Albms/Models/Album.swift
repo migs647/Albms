@@ -61,6 +61,7 @@ class Album: NSManagedObject, Codable {
     @NSManaged var artistThumbUrl: String?
     @NSManaged var genre: String?
     @NSManaged var url: String?
+    @NSManaged var sortNumber: Int16
     
     // MARK: - Decodable
     required convenience init(from decoder: Decoder) throws {
