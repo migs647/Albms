@@ -10,25 +10,37 @@ import UIKit
 
 class AlbumTableViewCell: UITableViewCell {
     
+    @IBOutlet var albumImageView: UIImageView!
+    @IBOutlet var albumLabel: UILabel!
+    @IBOutlet var artistLabel: UILabel!
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = UIColor.albDarkGray()
+        configureViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColor = UIColor.albDarkGray()
+        configureViews()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    private func configureViews() {
+        backgroundColor = UIColor.albDarkGray()
+        
+        albumImageView.layer.cornerRadius = 5.0
+        albumLabel.textColor = UIColor.albPeach()
+        artistLabel.textColor = UIColor.albMelon()
     }
     
 }

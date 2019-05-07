@@ -17,12 +17,16 @@ class MainViewController: AlbmsAbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Start an animation of the loading of the albums
         animateProcess(true)
         
+        // Grab the data controller so we can use it to load all of the albums
+        // from Core Data
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             dataController = appDelegate.dataController
         }
         
+        // Send a request out to grab the albums
         AlbmsNetworkController.shared.fetchLatestAlbums { [weak self] (success) in
             
             guard let controller = self?.dataController else { return }
@@ -35,6 +39,15 @@ class MainViewController: AlbmsAbstractViewController {
                 }
             }
         }
+        
+        // Configure views
+        
+        // TODO: Grab the albums out of cache in case the network does not
+        // return any results.
+    }
+    
+    private func configureViews() {
+        tableview.separatorColor = UIColor.albMediumGray()
     }
 }
 
@@ -44,11 +57,23 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let returnCell = tableView.dequeueReusableCell(withIdentifier: "AlbumCell")!
+        // Verify we can grab a cell, then fill out the details of the album
+        guard let returnCell = tableView.dequeueReusableCell(withIdentifier: "AlbumCell") as? AlbumTableViewCell else {
+            fatalError("Could not dequeue a cell -- fix for production code")
+        }
+        
+        if let albums = albums, albums.count > indexPath.row {
+            let album = albums[indexPath.row]
+            returnCell.albumLabel.text = album.name
+            returnCell.artistLabel.text = album.artistName
+        }
+        
         return returnCell
     }
 }
 
 extension MainViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableview.deselectRow(at: indexPath, animated: true)
+    }
 }

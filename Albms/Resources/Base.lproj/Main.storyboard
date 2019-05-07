@@ -22,13 +22,53 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumCell" id="6pK-RK-cRt">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumCell" rowHeight="90" id="6pK-RK-cRt" customClass="AlbumTableViewCell" customModule="Albms" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6pK-RK-cRt" id="NZA-TP-fXR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="Albm Generic" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-s4-kVO">
+                                                    <rect key="frame" x="15" y="15" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="zwx-s4-kVO" secondAttribute="height" multiplier="1:1" id="6q4-Iq-MZP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWQ-Rr-ISX">
+                                                    <rect key="frame" x="87" y="15" width="99.333333333333314" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="cfO-XL-gVU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHc-3A-ann">
+                                                    <rect key="frame" x="87" y="45" width="99.333333333333314" height="18"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="mHc-3A-ann" secondAttribute="bottom" constant="15" id="42A-Xc-muN"/>
+                                                <constraint firstItem="zwx-s4-kVO" firstAttribute="top" secondItem="NZA-TP-fXR" secondAttribute="topMargin" constant="4" id="Ei4-FL-PZx"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rWQ-Rr-ISX" secondAttribute="trailing" constant="5" id="LPW-2s-mtB"/>
+                                                <constraint firstItem="rWQ-Rr-ISX" firstAttribute="top" secondItem="zwx-s4-kVO" secondAttribute="top" id="LtN-N7-6jN"/>
+                                                <constraint firstItem="mHc-3A-ann" firstAttribute="leading" secondItem="rWQ-Rr-ISX" secondAttribute="leading" id="LuK-Du-Tyy"/>
+                                                <constraint firstItem="mHc-3A-ann" firstAttribute="trailing" secondItem="rWQ-Rr-ISX" secondAttribute="trailing" id="NxA-9t-jcV"/>
+                                                <constraint firstItem="zwx-s4-kVO" firstAttribute="leading" secondItem="NZA-TP-fXR" secondAttribute="leadingMargin" id="Qod-AO-iIr"/>
+                                                <constraint firstItem="mHc-3A-ann" firstAttribute="top" secondItem="rWQ-Rr-ISX" secondAttribute="bottom" constant="10" id="Wly-T2-ECx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zwx-s4-kVO" secondAttribute="bottom" constant="4" id="e2Z-t0-Wb5"/>
+                                                <constraint firstItem="rWQ-Rr-ISX" firstAttribute="leading" secondItem="zwx-s4-kVO" secondAttribute="trailing" constant="12" id="h0u-fa-IxV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumImageView" destination="zwx-s4-kVO" id="ajq-Tc-teC"/>
+                                            <outlet property="albumLabel" destination="rWQ-Rr-ISX" id="n0P-no-s0x"/>
+                                            <outlet property="artistLabel" destination="mHc-3A-ann" id="ubO-5r-aag"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -72,4 +112,7 @@
             <point key="canvasLocation" x="-138" y="52"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Albm Generic" width="120" height="120"/>
+    </resources>
 </document>

@@ -29,12 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.tintColor = UIColor.albDarkGray()
         
         UINavigationBar.appearance().barTintColor = UIColor.albDarkGray()
-        UINavigationBar.appearance().tintColor = UIColor.albLightForeground()
+        UINavigationBar.appearance().tintColor = UIColor.albPeach()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.albLightForeground()]
+            [NSAttributedString.Key.foregroundColor: UIColor.albPeach()]
         UINavigationBar.appearance().titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.albLightForeground()]
+            [NSAttributedString.Key.foregroundColor: UIColor.albPeach()]
         
         UITableView.appearance().separatorColor = UIColor.albDarkGray()
         UITableView.appearance().backgroundColor = UIColor.albDarkBackground()

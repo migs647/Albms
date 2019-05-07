@@ -36,12 +36,12 @@ extension UIColor {
     }
     
     // 144 203 64
-    static func albMediumGreen() -> UIColor {
-        return UIColor(red: 0.564, green: 0.79, blue: 0.25, alpha: 1.0)
+    static func albPeach() -> UIColor {
+        return UIColor(red: 0.96, green: 0.78, blue: 0.72, alpha: 1.0)
     }
     
     // 55 220 2
-    static func albFloGreen() -> UIColor {
-        return UIColor(red: 0.215, green: 0.862, blue: 0.007, alpha: 1.0)
+    static func albMelon() -> UIColor {
+        return UIColor(red: 0.82, green: 0.90, blue: 0.78, alpha: 1.0)
     }
 }

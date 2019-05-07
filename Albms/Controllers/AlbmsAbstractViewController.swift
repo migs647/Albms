@@ -29,8 +29,6 @@ class AlbmsAbstractViewController: UIViewController {
         
         let backButtonItem: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Back", comment: "Back Button"), style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButtonItem
-//        let profileImage = UIImage(named: "RP Profile Icon")
-//        self.navigationItem.setRightBarButton(UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profile(_:))), animated: false)
     }
     
     func animateProcess(_ animate: Bool) {
