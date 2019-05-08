@@ -20,6 +20,12 @@ struct AlbmsNetworkController {
         }
     }
     
+    /**
+     Hits the network for apple's current top 100 downloaded albums.
+     
+     - Parameter closure: The closure that is a handler for the success or
+    failure of fetching the albums.
+     */
     func fetchLatestAlbums(_ closure: @escaping (Bool) -> (Void)) {
         
         guard let url = URL(string: albumsURL) else { return }

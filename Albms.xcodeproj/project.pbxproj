@@ -17,7 +17,6 @@
 		965A9A8F2281569100E2151A /* ALBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A8E2281569100E2151A /* ALBUtilities.swift */; };
 		965A9A922281574600E2151A /* UIColor+Albms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A912281574600E2151A /* UIColor+Albms.swift */; };
 		965A9A96228158F100E2151A /* AlbmsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A95228158F100E2151A /* AlbmsDataController.swift */; };
-		965A9A9822815CEF00E2151A /* UIImageView+Albms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9722815CEF00E2151A /* UIImageView+Albms.swift */; };
 		965A9A9A22815F3600E2151A /* ALBImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9922815F3600E2151A /* ALBImageCache.swift */; };
 		965A9A9C228161E400E2151A /* AlbmsNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9B228161E400E2151A /* AlbmsNetworkController.swift */; };
 		965A9A9F2281652200E2151A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A9A9E2281652200E2151A /* Album.swift */; };
@@ -51,7 +50,6 @@
 		965A9A8E2281569100E2151A /* ALBUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBUtilities.swift; sourceTree = "<group>"; };
 		965A9A912281574600E2151A /* UIColor+Albms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Albms.swift"; sourceTree = "<group>"; };
 		965A9A95228158F100E2151A /* AlbmsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbmsDataController.swift; sourceTree = "<group>"; };
-		965A9A9722815CEF00E2151A /* UIImageView+Albms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Albms.swift"; sourceTree = "<group>"; };
 		965A9A9922815F3600E2151A /* ALBImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBImageCache.swift; sourceTree = "<group>"; };
 		965A9A9B228161E400E2151A /* AlbmsNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbmsNetworkController.swift; sourceTree = "<group>"; };
 		965A9A9E2281652200E2151A /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				965A9A912281574600E2151A /* UIColor+Albms.swift */,
-				965A9A9722815CEF00E2151A /* UIImageView+Albms.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,7 +281,6 @@
 				965A9A922281574600E2151A /* UIColor+Albms.swift in Sources */,
 				965A9A6D2281559900E2151A /* MainViewController.swift in Sources */,
 				965A9A9A22815F3600E2151A /* ALBImageCache.swift in Sources */,
-				965A9A9822815CEF00E2151A /* UIImageView+Albms.swift in Sources */,
 				965A9A6B2281559900E2151A /* AppDelegate.swift in Sources */,
 				965A9A732281559900E2151A /* Albms.xcdatamodeld in Sources */,
 				965A9A9C228161E400E2151A /* AlbmsNetworkController.swift in Sources */,

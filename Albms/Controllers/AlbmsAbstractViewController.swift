@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+/// A base class that does some nice set up and handles some memory clean up.
 class AlbmsAbstractViewController: UIViewController {
     
     let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
@@ -48,7 +50,10 @@ class AlbmsAbstractViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // Clear the cache out as that should be the first high memory purge
+        // that should happen.
+        ALBImageCache.shared.clear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+/// The view controller that displays a specific album and all of the details
+/// associated with that album.
 class DetailsViewController: AlbmsAbstractViewController {
     
     @IBOutlet var albumImageView: UIImageView!
@@ -36,7 +39,7 @@ class DetailsViewController: AlbmsAbstractViewController {
         }
     }
     
-    @IBAction func loadItunes() {
+    @IBAction func loadiTunes() {
         if let url = albumDetails?.url {
             let itunesURLString = url.replacingOccurrences(of: "https", with: "itms")
             if let itunesURL = URL(string: itunesURLString) {

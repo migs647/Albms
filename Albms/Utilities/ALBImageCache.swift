@@ -52,5 +52,9 @@ struct ALBImageCache {
             }.resume()
         }
     }
+    
+    func clear() {
+        albImageCache.removeAllObjects()
+    }
 
 }

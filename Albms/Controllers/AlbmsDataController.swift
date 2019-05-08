@@ -154,8 +154,10 @@ class AlbmsDataController: NSObject {
     }
     
     
-    /// Reset the database to it's original glory so we don't keep appending
-    /// albums every time we go a new fetch.
+    /**
+     Reset the database to it's original glory so we don't keep appending
+     albums every time we go a new fetch.
+     */
     func clearStorage() {
         let contextToUse = self.mainObjectContext
         
@@ -170,11 +172,13 @@ class AlbmsDataController: NSObject {
     }
     
     
-    /// Looks up all albums. This grabs all albums that were last downloaded.
-    ///
-    /// - Parameters:
-    ///   - context: Background or main contexts.
-    /// - Returns: Returns the session that was found, otherwise nil.
+    /**
+     Looks up all albums. This grabs all albums that were last downloaded.
+ 
+     - Parameters:
+     - context: Background or main contexts.
+     - Returns: Returns the session that was found, otherwise nil.
+     */
     func lookupAlbums(context: NSManagedObjectContext?) -> [Album]? {
         // Check the context, if it is NULL lets use the default context
         var contextToUse = self.mainObjectContext

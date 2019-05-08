@@ -69,6 +69,7 @@ class MainViewController: AlbmsAbstractViewController {
 ////////////////////////////////////////////////////////////////////////////////
 // MARK: - MainViewController UITableViewDataSource Methods
 extension MainViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albums?.count ?? 0
     }
@@ -99,13 +100,14 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 90 // Shoot for 90, this could be dynamic
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // MARK: - MainViewController UITableViewDelegate Methods
 extension MainViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableview.deselectRow(at: indexPath, animated: true)
         

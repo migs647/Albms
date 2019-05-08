@@ -36,12 +36,4 @@ struct ALBUtility {
     static func executeInBackgroundAndWait(_ block: @escaping () -> Void) {
         DispatchQueue.global(qos: .background).sync(execute: block)
     }
-    
-    static func executeOnServiceQueue(_ block: @escaping () -> Void) {
-        let concurrentQueue = DispatchQueue(label: "com.albms.service.queue", qos: .background, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
-        concurrentQueue.async(execute: block)
-        
-        //    dispatch_async(dispatch_queue_create("com.codygarvin.tweeflo.service.queue", DISPATCH_QUEUE_CONCURRENT), block);
-        
-    }
 }
