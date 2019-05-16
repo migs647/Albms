@@ -2,6 +2,8 @@
 An iPhone application that downloads the top 100 albums from  iTunes and builds a list to 
 view details about each album. The user may also go to the iTunes Store to purchase the album.
 
+The main purpose of this project is to convert to Clean Swift
+
 ## Installation
 
 ```bash
